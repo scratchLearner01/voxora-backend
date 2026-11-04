@@ -2,8 +2,10 @@
 import { Server } from "socket.io";
 import 'dotenv/config';
 import {createServer} from "http";
+import express from "express";
 
 
+const app = express();
 
 const server = createServer(app);
 
