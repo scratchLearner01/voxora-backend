@@ -1,18 +1,29 @@
 
 import { Server } from "socket.io";
 import 'dotenv/config';
+import {createServer} from "http";
 
 
-const io = new Server(3001, {
+
+const server = createServer(app);
+
+const PORT = process.env.PORT || 3001;
+
+const io = new Server(server, {
     cors: {
         origin: [
             "http://localhost:3000",
             "http://localhost:3002",
+            "https://your-frontend.vercel.app",
         ],
         methods: ["GET", "POST"],
     },
 });
-    
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
 // Users waiting for a stranger
 const waitingQueue = [];
 
