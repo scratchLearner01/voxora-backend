@@ -14,7 +14,7 @@ const io = new Server(server, {
         origin: [
             "http://localhost:3000",
             "http://localhost:3002",
-            "https://your-frontend.vercel.app",
+            "https://voxora-eta.vercel.app",
         ],
         methods: ["GET", "POST"],
     },
